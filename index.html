@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam 2026 Trip Planner</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+body {font-family: Arial, sans-serif; margin:0;}
+header {padding:20px; background:#1f2937; color:white;}
+#map {height:500px;}
+.container {padding:20px; max-width:1200px; margin:auto;}
+.card {border:1px solid #ddd; border-radius:8px; padding:12px; margin:12px 0;}
+.city {font-size:1.2em; font-weight:bold;}
+details {margin-top:8px;}
+</style>
+</head>
+<body>
+<header>
+<h1>Vietnam Family Trip – Summer 2026</h1>
+<p>Interactive planning site for lodging, food, activities, and itinerary.</p>
+</header>
+
+<div id="map"></div>
+
+<div class="container">
+<h2>Key Stops</h2>
+<div class="card"><div class="city">Ho Chi Minh City (Saigon)</div>War Remnants Museum, Ben Thanh Market, Notre Dame Cathedral, Opera House, Coffee Apartments.</div>
+<div class="card"><div class="city">Can Tho</div>Cai Rang Floating Market, basketball games (Jul 4), Mekong Delta excursions.</div>
+<div class="card"><div class="city">Sapa</div>Trekking, Fansipan Cable Car, Cat Cat Village.</div>
+<div class="card"><div class="city">Hanoi</div>Old Quarter, Temple of Literature, West Lake, Train Street, basketball games (Jul 9 & 11).</div>
+<div class="card"><div class="city">Ninh Binh</div>Trang An, Hang Mua, Tam Coc, Bai Dinh Pagoda.</div>
+
+<h2>Day-by-Day Itinerary</h2>
+
+    <details class="card">
+      <summary><strong>Day 1</strong> — Tuesday, June 30, 2026</summary>
+      <p><b>Morning:</b><br>Flight  LAX - HKG - SGN<br>CX 883<br>LAX 12:25AM<br></p>
+      <p><b>Afternoon:</b><br>Flight  LAX - HKG - SGN</p>
+      <p><b>Evening:</b><br>Flight  LAX - HKG - SGN</p>
+      <p><b>Hotel:</b><br>n/a (travel)</p>
+      <p><b>Notes:</b><br></p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 2</strong> — Wednesday, July 1, 2026</summary>
+      <p><b>Morning:</b><br>Flight  LAX - HKG - SGN<br>Arrive HKG 5:45am<br><br>CX 767<br>HKG 8:20AM - SGN 10:05AM<br><br>Pick up by Chi Ly's nephew</p>
+      <p><b>Afternoon:</b><br>Sàigòn<br>Lunch: tbd<br>Siesta<br>Afternoon: Nhà Thờ Đửc Bà, Bưu Điện, Nguyen Hue Street, Bach Dang Wharf, Caravelle Hotel, Rex Hotel, Hotel Continental</p>
+      <p><b>Evening:</b><br>Sàigòn<br>Early dinner along river<br>Early bedtime</p>
+      <p><b>Hotel:</b><br>Airbnb: Daisy'S House<br>45 Dang Thi Nhu<br></p>
+      <p><b>Notes:</b><br>Free cancellation before 3pm 6/26<br>Reserved by Vien<br><br>Paid in full</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 3</strong> — Thursday, July 2, 2026</summary>
+      <p><b>Morning:</b><br>Sàigòn<br>Viên's old house, Lê Quỷ Đôn, Gia Long, St. Exupery, Quổc Gia Âm Nhạc, Dinh Độc Lập (Independence Palace)</p>
+      <p><b>Afternoon:</b><br>Sàigòn<br>Lunch: tbd<br>Siesta<br>Late afternoon: War Museum</p>
+      <p><b>Evening:</b><br>Sàigòn<br>Dinner: with Henry Nguyen?<br></p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br>Dinner with Henry Nguyen?<br>Drinks at the Caravelle roof bar<br><br>HCMC Wings Game 7:30pm</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 4</strong> — Friday, July 3, 2026</summary>
+      <p><b>Morning:</b><br>Sàigòn<br>Chợ Bển Thành<br>District 1</p>
+      <p><b>Afternoon:</b><br>Sàigòn<br>Lunch: tbd<br>Siesta<br>Late afternoon: Thảo Cầm Viên, Bitexco Sky Deck</p>
+      <p><b>Evening:</b><br>Sàigòn<br>Dinner: tbd (maybe Cho Lon)<br>Post dinner: AO Show? https://www.luneproduction.com/ao-show</p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br>Saigon Classical. Music Group: https://quickom.net/Saigon-Classical-Music-Group--346</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 5</strong> — Saturday, July 4, 2026</summary>
+      <p><b>Morning:</b><br>Drive to Ben Tre<br>Leave 7am<br><br>Boatride, fruit plantations, lunch, the 4 islands, bike<br></p>
+      <p><b>Afternoon:</b><br>Bến Tre<br><br>Late afternoon, Drive to Cần Thơ<br></p>
+      <p><b>Evening:</b><br>Cần Thơ<br>Dinner: tbd<br>7:30pm: HCMC Wings at Cần Thơ Catfish</p>
+      <p><b>Hotel:</b><br>Tru by Hilton Can Tho<br>112 Đ. Trần Phú, Cái Khế<br>+84 292 3933 355<br></p>
+      <p><b>Notes:</b><br>Hotel Reserved by Tom<br>Driver is Chi Ly's nephew<br><br>HCMC Wings Game 7:30pm</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 6</strong> — Sunday, July 5, 2026</summary>
+      <p><b>Morning:</b><br>Cần Thơ<br>5am Chợ Nổi Cải Rang or Luc Ngoc Hoang</p>
+      <p><b>Afternoon:</b><br>Cần Thơ<br>Lunch: tbd<br>Cỏ Ngọt Cà Phê<br>Siesta<br>Nhà Cổ Bình Thủy<br>Thiền Viện Trúc Lâm Phương Nam<br>Chùa Viễn Quang<br>Chùa Ông</p>
+      <p><b>Evening:</b><br>Cần Thơ<br>Dinner: tbd<br>Night Market</p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br>Nicholas can join us</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 7</strong> — Monday, July 6, 2026</summary>
+      <p><b>Morning:</b><br>Flight Cần Thơ to Hà Nội<br>VN1200 <br>9:35 VCA - 11:50 HAN</p>
+      <p><b>Afternoon:</b><br>Drive<br>Hà Nội to Sapa<br></p>
+      <p><b>Evening:</b><br>Sapa<br>Dinner at home</p>
+      <p><b>Hotel:</b><br>Airbnb: Lagom home - Bamboo Forest</p>
+      <p><b>Notes:</b><br>Free cancellation before June 22<br>Paid $316.33<br>Due Jun 21 $238.20<br><br>Need to hire car Ha Noi to Sapa<br>Possible:  +84 93 203 9015<br> 98D Phan Đăng Lưu, Phường 3, Phú Nhuận, Vietnam</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 8</strong> — Tuesday, July 7, 2026</summary>
+      <p><b>Morning:</b><br>Sapa<br>Trek (Sapa - Y Linh Ho - Lao Chai - Ta Van), bamboo forest</p>
+      <p><b>Afternoon:</b><br>Sapa<br>Trek<br>Rest<br>Moana Sapa</p>
+      <p><b>Evening:</b><br>Sapa<br>tbd</p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br></p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 9</strong> — Wednesday, July 8, 2026</summary>
+      <p><b>Morning:</b><br>Sapa<br>Muong Hoa Monorail - Fansipan Cable Car</p>
+      <p><b>Afternoon:</b><br>Sapa<br>Ban May Village (1:50-4 performances)<br>Sapa Town<br>Cát Cát Village</p>
+      <p><b>Evening:</b><br>Sapa<br>tbd</p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br>Other ideas: Red Dao Authentic Herbal Bath, La Dao spa, O Quy Ho pass (and Silver waterfall, Love waterfall), Ham Rong Mountain, Cloud Dragon Skywalk, Heaven's Gate</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 10</strong> — Thursday, July 9, 2026</summary>
+      <p><b>Morning:</b><br>Drive to Hà Nội <br>Leave early, 6am?</p>
+      <p><b>Afternoon:</b><br>Hà Nội<br>Hồ Hoàn Kiếm</p>
+      <p><b>Evening:</b><br>Hà Nội<br>Dinner: tbd<br>7:30pm: HCMC Wings at Hà Nội Buffaloes</p>
+      <p><b>Hotel:</b><br>Lotus House 200 m² / 4 BR / Jacuzzi / Sauna / 1 min to Hoan Kiem Lake</p>
+      <p><b>Notes:</b><br>Full cancellation before June 9<br>Paid $535.05<br>Due Jun 24 $535.04<br><br>Need to hire car to Sapa to Ha Noi<br>HCMC Wings Game 7:30pm</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 11</strong> — Friday, July 10, 2026</summary>
+      <p><b>Morning:</b><br>Hà Nội<br>Old Quarter</p>
+      <p><b>Afternoon:</b><br>Hà Nội<br>Lunch: tbd<br>Bảo Tàng Dân Tộc Việt Nam (Ethnology Museum)<br>Visit Cô Hảo<br></p>
+      <p><b>Evening:</b><br>Hà Nội<br>tbd<br></p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br></p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 12</strong> — Saturday, July 11, 2026</summary>
+      <p><b>Morning:</b><br>Hà Nội<br>Văn Miểu, Chùa Một Cột, Hồ Tây, Chùa Trân Quổc, Hoàng Thành</p>
+      <p><b>Afternoon:</b><br>Hà Nội<br>Bảo Tàng Lịch Sử Quân Sự (Military History Museum)<br>Visit Bảc Quỷ Tư</p>
+      <p><b>Evening:</b><br>Hà Nội<br>Dinner: tbd<br>7:30pm: HCMC Wings at Hà Nội Buffaloes</p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br>HCMC Wings Game 7:30pm<br></p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 13</strong> — Sunday, July 12, 2026</summary>
+      <p><b>Morning:</b><br>Drive to Ninh Bình<br>Drive 6am - 8am<br>Trang An boat ride</p>
+      <p><b>Afternoon:</b><br>Ninh Bình<br>Lunch<br>Siesta<br>Hang Múa</p>
+      <p><b>Evening:</b><br>Ninh Bình<br>Dinner & walk at Phố Cổ Hoa Lư</p>
+      <p><b>Hotel:</b><br>Tràng An Ecolodge<br>Tràng An xã Trừờng Yên<br>+84 98 381 4123<br><br>Chi: +84 39 913 5559</p>
+      <p><b>Notes:</b><br>Need to hire car to Ninh Binh and back. Keep same car for both days?<br>Nicholas can join us<br><br>Booking.com  conf 6429967349<br>Pay at hotel local rate</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 14</strong> — Monday, July 13, 2026</summary>
+      <p><b>Morning:</b><br>Ninh Bình<br>Tam Cốc<br>Chùa Bích Động<br>Chùa Thái Vị</p>
+      <p><b>Afternoon:</b><br>Ninh Bình<br>Lunch - Tam Cốc Pet Coffee<br>2pm Drive to Đầm Vân Long <br>4pm Drive to Hà Nội</p>
+      <p><b>Evening:</b><br>Hà Nội<br>tbd</p>
+      <p><b>Hotel:</b><br>same as Hanoi above</p>
+      <p><b>Notes:</b><br>Nicholas can join us?</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 15</strong> — Tuesday, July 14, 2026</summary>
+      <p><b>Morning:</b><br>Hà Nội<br>tbd</p>
+      <p><b>Afternoon:</b><br>Hà Nội<br>Visit Bác Tuyết</p>
+      <p><b>Evening:</b><br>Hà Nội<br>tbd</p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br>Need to hire car Ha Noi to Nam Dinh</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 16</strong> — Wednesday, July 15, 2026</summary>
+      <p><b>Morning:</b><br>Drive to Nam Định</p>
+      <p><b>Afternoon:</b><br>Nam Định<br>tbd</p>
+      <p><b>Evening:</b><br>Hà Nội<br>tbd</p>
+      <p><b>Hotel:</b><br>same as above</p>
+      <p><b>Notes:</b><br>Could stay in Ha Noi</p>
+    </details>
+    
+    <details class="card">
+      <summary><strong>Day 17</strong> — Thursday, July 16, 2026</summary>
+      <p><b>Morning:</b><br>Drive to Bắc Ninh</p>
+      <p><b>Afternoon:</b><br>Bắc Ninh<br>Bat Trang Village & Museum<br></p>
+      <p><b>Evening:</b><br>Flight <br>CX 742<br>HAN 7:10PM - HKG 10:14PM<br><br>CX880 HKG 12:05AM - LAX 10:35PM<br></p>
+      <p><b>Hotel:</b><br>Chez Nous!</p>
+      <p><b>Notes:</b><br>Need to hire car to Ha Noi to Bac Ninh and airport<br><br>Can stop by Bat Trang & museum</p>
+    </details>
+    
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('map').setView([16.2,106.0], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+const places = [
+["Saigon",10.7769,106.7009],
+["Can Tho",10.0452,105.7469],
+["Sapa",22.3364,103.8438],
+["Hanoi",21.0285,105.8542],
+["Ninh Binh",20.2506,105.9745],
+["Nam Dinh",20.4388,106.1621],
+["Bac Ninh",21.1861,106.0763]
+];
+
+places.forEach(p=>L.marker([p[1],p[2]]).addTo(map).bindPopup(p[0]));
+L.polyline(places.map(p=>[p[1],p[2]])).addTo(map);
+</script>
+</body>
+</html>

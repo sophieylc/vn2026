@@ -1,21 +1,57 @@
-# Vietnam Trip Site v3
+# Vietnam Trip Site v4 - Google Places
 
-Static GitHub Pages site.
+Static GitHub Pages travel site with:
+- Home page
+- Google Places-powered interactive map
+- Separate itinerary page
+- Search and filters
+- Google Maps links
+- Google Places photos/ratings/addresses when available
+- Local browser comments saved with localStorage
 
-## Pages
-- `index.html` - home dashboard
-- `map.html` - interactive map with filters, Google Maps links, and local comments
-- `itinerary.html` - itinerary generated from the CSV spreadsheet
+## Important: GitHub Secret
 
-## Deploy on GitHub Pages
-1. Upload all files to your repo.
-2. Go to Settings -> Pages.
-3. Choose Deploy from branch.
-4. Select `main` and `/root`.
-5. Visit the published URL.
+You said you added a GitHub Actions secret named:
+
+`GOOGLE_API_KEY`
+
+This project includes `.github/workflows/deploy.yml`, which writes that secret into `js/config.js` at deploy time.
+
+## GitHub Pages setup
+
+Use GitHub Actions deployment, not “Deploy from branch”:
+
+1. Repo -> Settings -> Pages
+2. Source: GitHub Actions
+3. Push this repo to `main`
+4. Go to Actions and run/check `Deploy GitHub Pages`
+
+## Required Google APIs
+
+Enable:
+- Maps JavaScript API
+- Places API / Places Library
+
+Restrict the key:
+- HTTP referrers: `https://YOUR_USERNAME.github.io/*`
+- APIs: Maps JavaScript API and Places API only
+- Set tight quotas/budget alerts if you want to avoid spend
+
+## Local testing
+
+Copy:
+
+`js/config.example.js`
+
+to:
+
+`js/config.js`
+
+Then replace the placeholder with your local test key.
 
 ## Notes
-- Marker comments use browser `localStorage`, so they save only for the current user/browser/device.
-- Shared comments require a backend like Firebase/Supabase or a GitHub Issues-based comment system.
-- Google Maps photos cannot be pulled automatically without using the Google Places API and an API key.
-- Some lodging and restaurant coordinates are approximate. Use the Google Maps link in each popup to verify exact locations.
+
+- Comments save only to the current browser/device. Shared comments require a backend.
+- Google Places photos load only after clicking a marker or list item.
+- External links such as Airbnb/ticket pages skip Places lookup to avoid unnecessary API requests.
+- Some coordinates are still approximate; Google Places details help but do not replace final manual verification.

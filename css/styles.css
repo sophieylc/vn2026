@@ -166,3 +166,16 @@ a { color: #0f766e; }
   .day-body { grid-template-columns: 1fr; }
   .day-cell { border-right:0; border-bottom:1px solid var(--line); }
 }
+
+.gm-style-iw button { font-family: inherit; }
+.place-meta { margin: 8px 0; color: #667085; font-size: 13px; }
+.place-photo-note { font-size: 12px; color:#667085; margin-top:4px; }
+.api-warning {
+  padding: 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 12px;
+  margin: 10px 0;
+  display: none;
+}

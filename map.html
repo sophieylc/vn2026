@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vietnam Trip Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -21,7 +20,10 @@
 <div class="map-layout">
   <aside class="sidebar">
     <h2>Interactive Map</h2>
-    <p class="muted">Food, lodging, activities, family places, basketball, and transport. Click any dot to open details and save local notes.</p>
+    <p class="muted">Google Places-powered map with photos, ratings, addresses, Google Maps links, and local notes.</p>
+    <div id="apiWarning" class="api-warning">
+      Google API key missing. Add GOOGLE_API_KEY in GitHub Secrets and deploy with GitHub Actions.
+    </div>
     <input id="search" class="search" placeholder="Search places, cities, categories..." />
     <div style="display:flex;gap:8px;margin-bottom:10px;">
       <button id="showAll" class="btn" style="padding:8px 10px;">Show all</button>
@@ -33,8 +35,20 @@
   </aside>
   <main id="map"></main>
 </div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <script src="data/locations.js"></script>
-<script src="js/map.js"></script>
+<script src="js/config.js"></script>
+<script src="js/map-google.js"></script>
+<script>
+  if (!window.GOOGLE_API_KEY || window.GOOGLE_API_KEY.includes("PASTE_")) {
+    document.getElementById("apiWarning").style.display = "block";
+  } else {
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${window.GOOGLE_API_KEY}&libraries=places&callback=initMap&loading=async`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+</script>
 </body>
 </html>

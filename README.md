@@ -1,5 +1,9 @@
-# Vietnam Trip Site
 
-Upload contents to a GitHub repository and enable GitHub Pages.
+# Vietnam Trip V2
 
-Settings → Pages → Deploy from branch → main / root.
+Suggested next upgrades:
+- Convert to React + Vite
+- Geocode every restaurant, hotel and attraction
+- Add category filters
+- Import itinerary from JSON
+- Deploy automatically with GitHub Actions
